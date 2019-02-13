@@ -4,18 +4,18 @@ puts "Seeding database"
 puts "-------------------------------"
 
 # Create an initial Admin User
-admin_username = ENV['ERRBIT_ADMIN_USER'] || "errbit"
+admin_username = "errbit"
 
 def admin_email
-  return 'admin@example.com' if heroku_pr_review_app?
+  return 'psingh25@ncsu.edu' if heroku_pr_review_app?
 
-  ENV['ERRBIT_ADMIN_EMAIL'] || "errbit@#{Errbit::Config.host}"
+  "psingh25@ncsu.edu"
 end
 
 def admin_pass
   return 'demo-admin' if heroku_pr_review_app?
 
-  @admin_pass ||= ENV['ERRBIT_ADMIN_PASSWORD'] || SecureRandom.urlsafe_base64(12)[0, 12]
+  @admin_pass ||= "errbit"
 end
 
 def heroku_pr_review_app?
