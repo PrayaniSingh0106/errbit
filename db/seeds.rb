@@ -10,6 +10,7 @@ def admin_email
   return 'expertiza-support@lists.ncsu.edu' if heroku_pr_review_app?
 
   "expertiza-support@lists.ncsu.edu"
+
 end
 
 def admin_pass
