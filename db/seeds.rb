@@ -13,7 +13,7 @@ def admin_email
 end
 
 def admin_pass
-  return 'demo-admin' if heroku_pr_review_app?
+  return 'errbit' if heroku_pr_review_app?
 
   @admin_pass ||= "errbit"
 end
