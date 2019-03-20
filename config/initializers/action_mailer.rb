@@ -9,7 +9,8 @@ if Errbit::Config.email_delivery_method == :smtp
     password:             Errbit::Config.smtp_password,
     domain:               Errbit::Config.smtp_domain,
     enable_starttls_auto: Errbit::Config.smtp_enable_starttls_auto,
-    openssl_verify_mode:  Errbit::Config.smtp_openssl_verify_mode
+    openssl_verify_mode:  Errbit::Config.smtp_openssl_verify_mode,
+    enable_starttls_auto: true
   }
 end
 
