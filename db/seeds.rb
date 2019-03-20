@@ -7,9 +7,9 @@ puts "-------------------------------"
 admin_username = "errbit"
 
 def admin_email
-  return 'psingh25@ncsu.edu' if heroku_pr_review_app?
+  return 'expertiza-support@lists.ncsu.edu' if heroku_pr_review_app?
 
-  "psingh25@ncsu.edu"
+  "expertiza-support@lists.ncsu.edu"
 end
 
 def admin_pass
