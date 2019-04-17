@@ -7,17 +7,17 @@ namespace :git do
   end
 
   desc "Fetch and merge from git server, using current checked out branch"
-  task :pull_branch do
-    puts 'Pulling git'
+  task :fetch_upstream do
+    puts 'Fetching upstream'
     sh "git fetch upstream; git checkout master"
-    puts 'Pulled'
+    puts 'Fetched'
   end
 
  desc "Rewrite your master branch so that any commits not in upstream/master are replayed on top of the fetched branch"
   task :rebase_master do
     puts 'Git rebase'
     sh "git rebase upstream/master"
-    puts 'Rebase'
+    puts 'Rebased'
   end
 
   desc "Shows status of all files in git repo"
