@@ -1,5 +1,6 @@
 namespace :git do
 
+
 desc "Rewrite your master branch so that any commits not in upstream/master are replayed on top of the fetched branch"
   task :rebase_master do
     puts 'Git rebase'
@@ -10,7 +11,7 @@ desc "Rewrite your master branch so that any commits not in upstream/master are 
   desc "Shows status of all files in git repo"
   task :status do
     puts 'Showing `git status` of all source files'.pink
-    sh "cd errbit; git status --short"
+    sh "git status --short"
   end
 end
 
