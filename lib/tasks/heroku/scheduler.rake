@@ -8,7 +8,7 @@ namespace :git do
   #end
 
  desc "Rewrite your master branch so that any commits not in upstream/master are replayed on top of the fetched branch"
-  task :rebase_master do
+  task :update_fork do
     puts 'Git rebase'
     sh "git remote add upstream https://github.com/errbit/errbit.git; git fetch upstream; git checkout master; git rebase upstream/master"
     puts 'Rebased'
