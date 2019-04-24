@@ -6,6 +6,9 @@
 test_env_tasks = %w(default spec)
 if Rake.application.top_level_tasks.any? { |t| test_env_tasks.include?(t) }
   ENV['RAILS_ENV'] = 'test'
+  ENV['production_app']   = 'errbit-expertiza01'
+  ENV['staging_app']      = 'errbit-expertiza01'
+
 end
 
 require File.expand_path('../config/application', __FILE__)
