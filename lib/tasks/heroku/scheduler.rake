@@ -16,7 +16,7 @@ namespace :git do
 
   desc "Shows status of all files in git repo"
   task :status do
-    puts 'Showing `git status` of all source files'.pink
+    puts 'Showing `git status` of all source files'
     sh "cd errbit; git status --short"
   end
 end
