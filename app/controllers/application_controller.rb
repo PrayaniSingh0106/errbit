@@ -14,7 +14,6 @@ protected
   #
   def require_admin!
     return if user_signed_in? && current_user.admin?
-
     flash[:error] = "Sorry, you don't have permission to do that"
     redirect_to_root
   end
