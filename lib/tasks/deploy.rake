@@ -16,8 +16,8 @@ namespace :deploy do
  
   task :environment, :env do |t, args|
     deploy_branch(ENV["DEPLOY_BRANCH"], args.env)
-    Rake::Task["heroku:migrate"].invoke(ENV["#{args.env}_app"])
-    Rake::Task["heroku:restart"].invoke(ENV["#{args.env}_app"])
+    Rake::Task["heroku:migrate"]#.invoke(ENV["#{args.env}_app"])
+    Rake::Task["heroku:restart"]#.invoke(ENV["#{args.env}_app"])
   end
  
   def deploy_branch(branch, environment)
