@@ -5,10 +5,11 @@ namespace :deploy do
     Rake::Task["deploy:environment"].invoke("staging")
   end
  
-  desc 'Deploys a branch to production. DEPLOY_BRANCH specifies which branch to deploy.'
+  desc 'Deploys a branch to production. Use DEPLOY_BRANCH to specify which branch to deploy.'
   task :production do
-    #Rake::Task["git:status"].invoke("production")
-    #Rake::Task["git:update_fork"].invoke("production")
+    Rake::Task["git:status"].invoke("production")
+    Rake::Task["git:update_fork"].invoke("production")
+
     Rake::Task["deploy:environment"].invoke("production")
     puts 'In production task'
   end
@@ -22,12 +23,10 @@ namespace :deploy do
   def deploy_branch(branch, environment)
     if branch
       puts 'In deploy_branch'
-      #sh "git pull "
-      sh "git add ."
-      sh "git commit -m \"resolve conflict\" "
       sh "git push #{environment} #{branch}:master"
     else
       puts "Please, specify a branch to deploy."
+      puts "Usage => deploy:staging DEPLOY_BRANCH=release_0.15"
       exit 1
     end
   end
