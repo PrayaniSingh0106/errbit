@@ -8,14 +8,13 @@ admin_username = "errbit"
 
 def admin_email
   return 'expertiza-support@lists.ncsu.edu' if heroku_pr_review_app?
-<<<<<<< HEAD
+
 
   "expertiza-support@lists.ncsu.edu"
 
-=======
 
-  "expertiza-support@lists.ncsu.edu"
->>>>>>> origin/master
+
+
 end
 
 def admin_pass
